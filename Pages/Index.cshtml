@@ -1,0 +1,937 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scarstack IT Training</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin-top: -40px;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            overflow: hidden;
+        }
+
+        .cardStyle {
+            margin-left: -15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- First Row -->
+        <div class="card card-body text-bg-light mb-9 custom-card">
+            <div class="row">
+                <div class="col-md-6" id="cardStyle">
+                    <div class="card text-align text-center" style="width: 20.1rem;">
+                        <img src="https://wallpapercave.com/wp/wp3734379.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: purple; font-weight: bold;">Cloud Solution Architect</h5>
+                            <h6 class="card-title">COST: $1,400</h6>
+                            <br />
+                            <p class="card-text" id="textAdjustOne">
+                                Be an expert in networking, administering and configuring Virtual Machines, App Services, and Severless Resources using SaaS,
+                                PaaS, and IaaS. Become highly skilled in Migrating, Securing, Deploying, and Monitoring Apps, APIs, VMs, and Databases.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush" id="textAdjustOne">
+                            <li class="list-group-item" style="font-weight: bold;">Duration: 10 Weeks</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="https://www.tickettailor.com/events/scarstacksolutionittrainingandservices/981218" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <br />
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseOne" style="color: purple; font-weight: 800;" aria-expanded="false" id="textAdjustTwo"
+                                        aria-controls="flush-collapseOne">
+                                    TOOLS UTILIZED IN TRAINING
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <p>
+                                        <ul>
+                                            <li>Microsoft Azure Portal</li>
+                                            <li>Azure CloudShell</li>
+                                            <li>Azure DevOps Services</li>
+                                            <li>Azure Data Studio</li>
+                                            <li>Azure Bastion</li>
+                                            <li>Azure Storage Explorer</li>
+                                            <li>Azure CLI & PowerShell</li>
+                                            <li>Docker Hub & Desktop</li>
+                                            <li>Visual Studio Code</li>
+                                            <li>GitHub and Git Version Control</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseTwo" style="color: purple; font-weight: 800;" aria-expanded="false" id="textAdjustTwo"
+                                        aria-controls="flush-collapseTwo">
+                                    TRAINING COURSE SYLLABUS
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <p>
+                                        <ul>
+                                            <li>
+                                                Foundation Basics
+                                                <ul>
+                                                    <li>Azure Subscriptions</li>
+                                                    <li>Resource Groups</li>
+                                                    <li>Azure Regional locations</li>
+                                                    <li>Azure Container Registry</li>
+                                                    <li>Azure Resource Manager (ARM)</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Compute Services
+                                                <ul>
+                                                    <li>Virtual Machines (VMs)</li>
+                                                    <li>Container Apps</li>
+                                                    <li>Azure Functions</li>
+                                                    <li>App Services (WebApp, API, SPAs)</li>
+                                                    <li>Azure Kubernetes Services (AKS)</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Databases
+                                                <ul>
+                                                    <li>Azure Cosmos DB</li>
+                                                    <li>Azure SQL Databases</li>
+                                                    <li>Azure Database Migration Service</li>
+                                                    <li>Azure SQL Managed Instances</li>
+                                                    <li>SQL Server on Azure Virtual Machine</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                DevOps
+                                                <ul>
+                                                    <li>Azure Pipelines</li>
+                                                    <li>Azure Repositories</li>
+                                                    <li>Azure Artifacts</li>
+                                                    <li>Azure Boards</li>
+                                                    <li>Azure Load Testing</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Networking
+                                                <ul>
+                                                    <li>Load Balancers & Application Gateway</li>
+                                                    <li>Virtual Network & Subnets</li>
+                                                    <li>VPN Gateway & GatewaySubnets</li>
+                                                    <li>DNS Zones, DNS Names & DNS Servers</li>
+                                                    <li>Azure Firewall & Firewall Manager</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Security
+                                                <ul>
+                                                    <li>Azure Active Directory</li>
+                                                    <li>Network Security Groups</li>
+                                                    <li>Application Security Groups</li>
+                                                    <li>Identity Access management (IAM)</li>
+                                                    <li>Key Vaults, Private Links & Endpoints</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Monitoring
+                                                <ul>
+                                                    <li>Logs</li>
+                                                    <li>Application Insights</li>
+                                                    <li>Metrics</li>
+                                                    <li>Alerts</li>
+                                                    <li>Diagnostic Settings</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Storage
+                                                <ul>
+                                                    <li>Azure Blob Storage</li>
+                                                    <li>Storage Accounts</li>
+                                                    <li>Azure backup</li>
+                                                    <li>API Keys & Secrets</li>
+                                                    <li>Azure API Management</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Azure Governance
+                                                <ul>
+                                                    <li>Azure Blueprints</li>
+                                                    <li>Azure Policy</li>
+                                                    <li>Azure Resource Graph</li>
+                                                    <li>Azure Cost Management</li>
+                                                    <li>Azure Management Group</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Cost Management
+                                                <ul>
+                                                    <li>Cost Analysis</li>
+                                                    <li>Cost Alerts</li>
+                                                    <li>Budgets</li>
+                                                    <li>Billing Profile Invoices</li>
+                                                    <li>Advisor Recommendations</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>CERTIFICATION YOU WILL EARN!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Microsoft Certified: Azure Administrator Associate
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>MEDIAN SALARY FOR THIS ROLE!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Average Salary Per Annum: $141,000 - $224,000
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!-- Second Row -->
+        <div class="card card-body text-bg-light mb-9 custom-card">
+            <div class="row">
+                <div class="col-md-6" id="cardStyle">
+                    <div class="card text-align text-center" style="width: 20.1rem;">
+                        <img src="https://miro.medium.com/v2/resize:fit:800/0*XH3rLskyOsCqVV-j.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="COLOR:purple; font-weight: bold;">Full Stack Developer</h5>
+                            <h6 class="card-title">COST: $1,700</h6>
+                            <br />
+                            <p class="card-text" id="textAdjustOne">
+                                As a proficient Full Stack Developer, you will acquire the expertise to create scalable and resilient WebApps,
+                                APIs, and Databases utilizing a diverse array of languages such as C#, .NET Core, .ASP.NET, HTML5, CSS, Bootstrap,
+                                T-SQL, jQuery, and JavaScript.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush" id="textAdjustOne">
+                            <li class="list-group-item" style="font-weight: bold;">Duration: 12 Weeks</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="https://www.tickettailor.com/events/scarstacksolutionittrainingandservices/981218" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <br />
+                    <div class="accordion accordion-flush" id="accordionFlushExample2">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseFour" style="color: purple; font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseFour">
+                                    TOOLS UTILIZED IN TRAINING
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>Microsoft Visual Studio</li>
+                                            <li>GitHub & Git Version Control</li>
+                                            <li>Azure Data Studio</li>
+                                            <li>Azure DevOps Services</li>
+                                            <li>Visual Studio Code</li>
+                                            <li>GitHub Desktop</li>
+                                            <li>Postman API Platform</li>
+                                            <li>Azure Portal</li>
+                                            <li>Azure Cloud Shell</li>
+                                            <li>Docker Hub & Desktop</li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseFive" style="color: purple;font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseFive">
+                                    TRAINING COURSE SYLLABUS
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>
+                                                C# Programing Fundamentals
+                                                <ul>
+                                                    <li>.NET 7, Debuging and Release</li>
+                                                    <li>Namespace and Assemblies</li>
+                                                    <li>Constructors and Modifiers</li>
+                                                    <li>Nuget Packages & Libraries</li>
+                                                    <li>Object-Oriented Design</li>
+                                                    <li>Arrays and Collections</li>
+                                                    <li>Interfaces and Abstracts</li>
+                                                    <li>Version Control and Repos</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Azure Compute & Containers
+                                                <ul>
+                                                    <li>App Services (Code & Docker)</li>
+                                                    <li>Virtual Machines (VMs)</li>
+                                                    <li>Container Apps</li>
+                                                    <li>Azure Functions</li>
+                                                    <li>Azure Kubernetes Services</li>
+                                                    <li>Azure Container Registry</li>
+                                                    <li>Azure SQL Databases</li>
+                                                    <li>Azure Database Migration Service</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Advanced C# Programming
+                                                <ul>
+                                                    <li>Introduction to LINQ Querying</li>
+                                                    <li>IEnumerable Vs. IQueryable</li>
+                                                    <li>Async Programming</li>
+                                                    <li>Method Overload and Overide</li>
+                                                    <li>Switch, Return & Continue</li>
+                                                    <li>Enums and Extension Methods</li>
+                                                    <li>Regex String Manipulation</li>
+                                                    <li>Anonymous and Reference Types</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Cross-Cutting Concerns
+                                                <ul>
+                                                    <li>Dependency Injection</li>
+                                                    <li>Exception Handling</li>
+                                                    <li>Logging</li>
+                                                    <li>Entity Framework Core</li>
+                                                    <li>Unit Testing</li>
+                                                    <li>Validation</li>
+                                                    <li>Client & Server Side Caching</li>
+                                                    <li>Authentication and Authorization</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Patterns & Principles
+                                                <ul>
+                                                    <li>Model View Controller (MVC)</li>
+                                                    <li>Model View View-Model (MVVM)</li>
+                                                    <li>Domain Driven Design (DDD)</li>
+                                                    <li>SOLID Design Principles</li>
+                                                    <li>Test Driven Development (TDD)</li>
+                                                    <li>Microservices, Monolith and SOA</li>
+                                                    <li>Repository & Unit of Work Patterns</li>
+                                                    <li>Command Query Responsibility Segregation (CQRS)</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Full Stack Development
+                                                <ul>
+                                                    <li>Bootstrap, HTML, CSS and JavaScript</li>
+                                                    <li>Views, Layout and Partial Views</li>
+                                                    <li>Controllers, Actions and Routing</li>
+                                                    <li>Clients & IHttpClientFactory</li>
+                                                    <li>RESTful Web APIs</li>
+                                                    <li>SQL Server, T-SQL and Database Design</li>
+                                                    <li>Handling Errors in T-SQL</li>
+                                                    <li>Procedures, Functions and Triggers</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>CERTIFICATION YOU'LL EARN!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Microsoft Certified: Azure Developer Associate
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>MEDIAN SALARY FOR THIS ROLE!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Average Salary Per Annum: $123,000 - $207,000
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!-- Third Row -->
+        <div class="card card-body text-bg-light mb-9 custom-card">
+            <div class="row">
+                <div class="col-md-6" id="cardStyle">
+                    <div class="card text-align text-center" style="width: 20.1rem;">
+                        <img src="https://c0.wallpaperflare.com/preview/698/633/73/start-up-start-up-revenue.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="COLOR:purple; font-weight: bold;">
+                                DevOps Engineer</h6>
+                                <h6 class="card-title">COST: $1,400</h6>
+                                <br />
+                                <p class="card-text" id="textAdjustOne">
+                                    Become Highly proficient in Containerization, Deployment, and Automation of Web Apps, RESTful APIs and Databases.
+                                    You will also gain Technical skills in Continuous integration and deployment (CI/CD), Repos, Test Plans, Automation Tools,
+                                    Ochestration and Microservices.
+                                </p>
+                        </div>
+                        <ul class="list-group list-group-flush" id="textAdjustOne">
+                            <li class="list-group-item" style="font-weight: bold;">Duration: 10 Weeks</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="https://www.tickettailor.com/events/scarstacksolutionittrainingandservices/981218" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <br />
+                    <div class="accordion accordion-flush" id="accordionFlushExample3">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseSeven" style="color: purple; font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseSeven">
+                                    TOOLS UTILIZED IN TRAINING
+                                </button>
+                            </h2>
+                            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample3">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>Azure DevOps Server</li>
+                                            <li>GitHub & Git</li>
+                                            <li>Kubernetes</li>
+                                            <li>Ansible</li>
+                                            <li>Azure Portal</li>
+                                            <li>Jenkins</li>
+                                            <li>Visual Studio Code</li>
+                                            <li>GitHub Desktop</li>
+                                            <li>Docker Desktop & Hub</li>
+                                            <li>Microsoft Visual Studio</li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseEight" style="color: purple;font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseEight">
+                                    TRAINING COURSE SYLLABUS
+                                </button>
+                            </h2>
+                            <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample3">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>
+                                                <strong>Azure Fundamentals</strong>
+                                                <ul>
+                                                    <li>Azure Cloud Overview</li>
+                                                    <li>Azure Resource Management</li>
+                                                    <li>Creating and Managing Azure Resources</li>
+                                                    <li>Azure Identity and Access Management</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>DevOps Principles</strong>
+                                                <ul>
+                                                    <li>Introduction to DevOps</li>
+                                                    <li>Continuous Integration (CI) and Continuous Deployment (CD)</li>
+                                                    <li>Version Control with Git</li>
+                                                    <li>Package management with Azure Artifacts</li>
+                                                    <li>Automated Testing and Quality Assurance</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Azure DevOps Services</strong>
+                                                <ul>
+                                                    <li>Introduction to Azure DevOps</li>
+                                                    <li>Creating and Managing Projects</li>
+                                                    <li>Azure Boards and Managing Projects</li>
+                                                    <li>Version Control with Azure Repos</li>
+                                                    <li>CI/CD Pipelines with Azure Pipelines</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Infrastructure as Code (IaC)</strong>
+                                                <ul>
+                                                    <li>Introduction to IaC</li>
+                                                    <li>Using Azure Resource Manager Templates (ARM Templates)</li>
+                                                    <li>Automating Infrastructure Deployment</li>
+                                                    <li>Configuration Management with Azure DSC</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Containers and Orchestration</strong>
+                                                <ul>
+                                                    <li>Containerization with Docker</li>
+                                                    <li>Orchestrating Containers with Kubernetes</li>
+                                                    <li>Azure App Services and Container Apps</li>
+                                                    <li>Azure Kubernetes Service (AKS)</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Monitoring and Logging</strong>
+                                                <ul>
+                                                    <li>Azure Monitor and Log Analytics</li>
+                                                    <li>Application Insights</li>
+                                                    <li>Alerting and Notifications</li>
+                                                    <li>Performance Optimization</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Security and Compliance</strong>
+                                                <ul>
+                                                    <li>Security Best Practices in Azure</li>
+                                                    <li>Identity and Access Management (IAM)</li>
+                                                    <li>Compliance and Governance</li>
+                                                    <li>Incident Response and Recovery</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>CERTIFICATION YOU'LL EARN!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Microsoft Certified: DevOps Engineer Expert
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>MEDIAN SALARY FOR THIS ROLE!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Average Salary Per Annum: $145,000 - $224,000
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!-- Fifth Row -->
+        <div class="card card-body text-bg-light mb-9 custom-card">
+            <div class="row">
+                <div class="col-md-6" id="cardStyle">
+                    <div class="card text-align text-center" style="width: 20.1rem;">
+                        <img src="https://c0.wallpaperflare.com/preview/698/633/73/start-up-start-up-revenue.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="COLOR:purple; font-weight: bold;">MEAN Stack Developer</h5>
+                            <h6 class="card-title">COST: $1,700</h6>
+                            <br />
+                            <p class="card-text" id="textAdjustOne">
+                                Create cutting-edge Robust Modern Apps such as Single Page Applications (SPAs), REST APIs, and NoSQL Databases,
+                                as a MEAN Stack Developer utilizing languages like Angular, Typescript, JavaScript, HTML5, CSS, Bootstrap,
+                                and NoSQL.
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush" id="textAdjustOne">
+                            <li class="list-group-item" style="font-weight: bold;">Duration: 12 Weeks</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="https://www.tickettailor.com/events/scarstacksolutionittrainingandservices/981218" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <br />
+                    <div class="accordion" id="accordionFlushExample7">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseNineteen" style="color: purple; font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseNineteen">
+                                    TOOLS UTILIZED IN TRAINING
+                                </button>
+                            </h2>
+                            <div id="flush-collapseNineteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample7">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>Visual Studio Code</li>
+                                            <li>Git and GitHub</li>
+                                            <li>Angular CLI</li>
+                                            <li>Node Package Manager</li>
+                                            <li>Node.Js</li>
+                                            <li>Bootstrap</li>
+                                            <li>Angular Material</li>
+                                            <li>Postman API Platform</li>
+                                            <li>MongoDB NoSQL Database</li>
+                                            <li>Microsoft Visual Studio</li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseTwenty" style="color: purple;font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseTwenty">
+                                    TRAINING COURSE SYLLABUS
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwenty" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample7">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>
+                                                <strong>Section 1: Introduction to Full Stack Development</strong>
+                                                <ul>
+                                                    <li>Understanding Full Stack Development</li>
+                                                    <li>Role of a Full Stack Developer</li>
+                                                    <li>Frontend vs. Backend Technologies Overview</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Section 2: Frontend Development Essentials</strong>
+                                                <ul>
+                                                    <li>HTML Fundamentals</li>
+                                                    <li>CSS Fundamentals</li>
+                                                    <li>Bootstrap for Responsive Web Design</li>
+                                                    <li>JavaScript Basics</li>
+                                                    <li>TypeScript Fundamentals</li>
+                                                    <li>Frontend Project Setup with Angular CLI</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Section 3: Frontend Development with Angular</strong>
+                                                <ul>
+                                                    <li>Angular Fundamentals and Architecture</li>
+                                                    <li>Components, Templates, and Data Binding</li>
+                                                    <li>Services and Dependency Injection</li>
+                                                    <li>Routing and Navigation</li>
+                                                    <li>Forms and Reactive Forms</li>
+                                                    <li>Angular HTTP Client for API Integration</li>
+                                                    <li>Angular Directives and Pipes</li>
+                                                    <li>Frontend Project Structure and Best Practices</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Section 4: Backend Development with ASP.NET Core and C#</strong>
+                                                <ul>
+                                                    <li>Introduction to ASP.NET Core</li>
+                                                    <li>Building RESTful APIs with ASP.NET Core (Equivalent to Express.js)</li>
+                                                    <li>Middleware and Routing in ASP.NET Core (Equivalent to Express.js)</li>
+                                                    <li>User Authentication and Authorization</li>
+                                                    <li>Error Handling and Validation</li>
+                                                    <li>Testing with xUnit and Moq</li>
+                                                    <li>REST API Best Practices in ASP.NET Core (Equivalent to Express.js)</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Section 5: Database Management with MongoDB NoSQL</strong>
+                                                <ul>
+                                                    <li>MongoDB NoSQL Fundamentals</li>
+                                                    <li>Data Modeling and Schema Design</li>
+                                                    <li>CRUD Operations with MongoDB NoSQL</li>
+                                                    <li>Advanced Querying and Indexing</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>Section 6: Version Control and Collaboration</strong>
+                                                <ul>
+                                                    <li>Git Version Control Best Practices</li>
+                                                    <li>Collaborative Development with Git and GitHub</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>CERTIFICATION YOU'LL EARN!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Angular Developer Certified - Level 2
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>MEDIAN SALARY FOR THIS ROLE!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Average Salary Per Annum: $116,000 - $178,000
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!-- Sixth Row -->
+        <div class="card card-body text-bg-light mb-9 custom-card">
+            <div class="row">
+                <div class="col-md-6" id="cardStyle">
+                    <div class="card text-align text-center" style="width: 20.1rem;">
+                        <img src="https://c0.wallpaperflare.com/preview/698/633/73/start-up-start-up-revenue.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" style="COLOR:purple; font-weight: bold;">Scrum Master</h5>
+                            <h6 class="card-title">COST: $1,400</h6>
+                            <br />
+                            <p class="card-text" id="textAdjustOne">
+                                Become a World Class Expert in Scrum, Agile, Kanban, Scrumban, Scrum of Scrums, JIRA Boards and Scaled Agile
+                                Framework (SAFe®). we also help you secure your Scrum Certification as a Certified Scrum Master (CSM)
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush" id="textAdjustOne">
+                            <li class="list-group-item" style="font-weight: bold;">Duration: 10 Weeks</li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="https://www.tickettailor.com/events/scarstacksolutionittrainingandservices/981218" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="accordion accordion-flush" id="accordionFlushExample5">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseThirteen" style="color: purple; font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseThirteen">
+                                    TOOLS UTILIZED IN TRAINING
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample5">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>JIRA Confluence</li>
+                                            <li>JIRA Boards</li>
+                                            <li>Azure Boards</li>
+                                            <li>Azure DevOps Services</li>
+                                            <li>Git & GitHub/GitLab</li>
+                                            <li>Planning Poker</li>
+                                            <li>Monday Dev</li>
+                                            <li>Google Workspace</li>
+                                            <li>Visual Studio Code</li>
+                                            <li>Microsoft Azure Portal</li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" id="careerTitle"
+                                        data-bs-target="#flush-collapseFourteen" style="color: purple;font-weight: 800;" aria-expanded="false" id="textAdjustTwo" aria-controls="flush-collapseFourteen">
+                                    TRAINING COURSE SYLLABUS
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFourteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample5">
+                                <div class="accordion-body" id="textAdjustThree">
+                                    <P>
+                                        <ul>
+                                            <li>
+                                                <h3>Module 1: Scrum Fundamentals</h3>
+                                                <ul>
+                                                    <li>Introduction to Agile and Scrum</li>
+                                                    <li>Scrum Roles: Product Owner, Scrum Master, Development Team</li>
+                                                    <li>Scrum Artifacts: Product Backlog, Sprint Backlog, Increment</li>
+                                                    <li>Scrum Events: Sprint, Daily Scrum, Sprint Review, Sprint Retrospective</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h3>Module 2: Advanced Scrum Concepts</h3>
+                                                <ul>
+                                                    <li>User Stories and Product Backlog Refinement</li>
+                                                    <li>Definition of Done (DoD)</li>
+                                                    <li>Handling Technical Debt in Scrum</li>
+                                                    <li>Scaling Scrum for Large Projects</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h3>Module 3: Kanban and Scrumban</h3>
+                                                <ul>
+                                                    <li>Introduction to Kanban</li>
+                                                    <li>Kanban Boards and Work in Progress (WIP) Limits</li>
+                                                    <li>Combining Scrum and Kanban: Scrumban</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h3>Module 4: Scrum of Scrums</h3>
+                                                <ul>
+                                                    <li>Coordination in Large Agile Projects</li>
+                                                    <li>Scrum of Scrums Meetings</li>
+                                                    <li>Scaling Scrum Across Multiple Teams</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h3>Module 5: Scaled Agile Frameworks</h3>
+                                                <ul>
+                                                    <li>Introduction to Scaled Agile Frameworks (SAFe)</li>
+                                                    <li>Roles and Responsibilities in SAFe</li>
+                                                    <li>SAFe Principles and Values</li>
+                                                    <li>Implementing SAFe in an Organization</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h3>Module 6: Agile Project Management Tools</h3>
+                                                <ul>
+                                                    <li>Using JIRA Software for Agile Project Management</li>
+                                                    <li>Configuring and Customizing JIRA for Scrum and Kanban</li>
+                                                    <li>Integrating JIRA with Other Tools</li>
+                                                    <li>Azure Boards for Agile Project Management</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h3>Module 7: Agile Estimation and Planning</h3>
+                                                <ul>
+                                                    <li>Story Point Estimation</li>
+                                                    <li>Planning Poker Techniques</li>
+                                                    <li>Release Planning and Sprint Planning</li>
+                                                    <li>Creating and Managing Product and Sprint Backlogs</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <h3>Module 8: Agile Metrics and Monitoring</h3>
+                                                <ul>
+                                                    <li>Introduction to Agile Metrics</li>
+                                                    <li>Tracking Progress with Burndown Charts</li>
+                                                    <li>Velocity and Cumulative Flow Diagrams</li>
+                                                    <li>Continuous Improvement and Retrospectives</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </P>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>CERTIFICATION YOU'LL EARN!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Certified Scrum Master (CSM)
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                    <br />
+                    <div class="card align-items" style="width: 18rem; border-radius: 7px; margin-left: 20px;">
+                        <div class="card-header" style="background-color: blue; color: white" id="textAdjustOne">
+                            <h6>MEDIAN SALARY FOR THIS ROLE!</h6>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Average Salary Per Annum: $90,000 - $131,000
+                            </li>
+                        </ul>
+                        <br />
+                    </div>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script></script>
+</body>
+</html>
+
