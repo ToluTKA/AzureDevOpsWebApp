@@ -37,15 +37,3 @@ steps:
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
 
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'ScarStack_Azure_subscription 1 (d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66)'
-    appType: 'webApp'
-    WebAppName: 'azuredevopsmvcapp'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'scrstackGrp'
-    SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    enableCustomDeployment: true
-    DeploymentType: 'webDeploy'
