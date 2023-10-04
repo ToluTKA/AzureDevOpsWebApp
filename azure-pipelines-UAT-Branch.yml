@@ -1,0 +1,86 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- uat
+
+pool:
+  vmImage: windows-latest
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+stages:
+- stage: Tests
+  jobs:
+  - job: 
+    displayName: Unit tests
+    steps:
+    - script: echo simulate running your unit tests!
+      displayName: 'Run unit tests'
+  - job: 
+    displayName: UI tests
+    steps:
+    - script:  echo simulate running your ui tests!
+      displayName: 'Run unit tests'
+
+- stage: Build
+  dependsOn: [] # This will remove implicit dependency and run in parallel with the stage: Tests above 
+  jobs:
+  - job:
+    displayName: Build the application
+    steps:
+    - script: |
+        echo Running all builds commands...
+        echo ... commands successfully completed.
+      displayName: 'Run build scripts & tasks'
+
+    - task: NuGetToolInstaller@1
+
+    - task: NuGetCommand@2
+      inputs:
+       restoreSolution: '$(solution)'
+    
+    - task: VSBuild@1
+      inputs:
+       solution: '$(solution)'
+       msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+       platform: '$(buildPlatform)'
+       configuration: '$(buildConfiguration)'
+
+    - task: VSTest@2
+      inputs:
+       platform: '$(buildPlatform)'
+       configuration: '$(buildConfiguration)'
+    
+    # Continue with your other build steps
+
+    # Add PublishBuildArtifacts task here
+    - task: CopyFiles@2
+      inputs:
+       targetFolder: '$(Build.ArtifactStagingDirectory)' 
+    
+    - task: PublishBuildArtifacts@1    
+      displayName: 'Publish Artifact: drop'
+      inputs:
+       PathtoPublish: '$(build.artifactstagingdirectory)'
+
+- stage: UAT
+  dependsOn:
+  - Tests
+  - Build
+  - Dev
+  jobs:
+  - deployment:
+    displayName: UAT deploy
+    environment: UAT
+    strategy:
+     runOnce:
+       deploy:
+         steps:
+           - script: echo Running in the UAT environment as a deployment job
+             displayName: 'UAT based stage'
