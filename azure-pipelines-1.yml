@@ -3,6 +3,11 @@ trigger: none
 pool:
   vmImage: ubuntu-latest
 
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
 stages:
 - stage: Tests
   jobs:
@@ -28,6 +33,24 @@ stages:
         echo ... commands successfully completed.
       displayName: 'Run build scripts & tasks'
     
+    - task: NuGetToolInstaller@1
+
+    - task: NuGetCommand@2
+      inputs:
+       restoreSolution: '$(solution)'
+    
+    - task: VSBuild@1
+      inputs:
+       solution: '$(solution)'
+       msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+       platform: '$(buildPlatform)'
+       configuration: '$(buildConfiguration)'
+
+    - task: VSTest@2
+      inputs:
+       platform: '$(buildPlatform)'
+       configuration: '$(buildConfiguration)'
+    
     # Add PublishBuildArtifacts task here
     - task: CopyFiles@2
       inputs:
@@ -45,7 +68,7 @@ stages:
   jobs:
   - deployment:
     displayName: Dev deploy
-    environment: Dev
+    environment: DEV
     strategy:
      runOnce:
        deploy:
