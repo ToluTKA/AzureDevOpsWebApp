@@ -33,26 +33,6 @@ stages:
         echo ... commands successfully completed.
       displayName: 'Run build scripts & tasks'
 
-    # Add platform-specific checks here
-    - script: |
-        if [ "$(uname)" == "Darwin" ]; then
-            # macOS-specific commands
-            echo "Running macOS-specific commands..."
-        elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-            # Linux-specific commands
-            echo "Running Linux-specific commands..."
-        elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-            # Windows-specific commands
-            echo "Running Windows-specific commands..."
-        elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
-            # Windows-specific commands
-            echo "Running Windows-specific commands..."
-        else
-            echo "Unsupported operating system"
-            exit 1
-        fi
-      displayName: 'Platform-Specific Commands'
-
     - task: NuGetToolInstaller@1
 
     - task: NuGetCommand@2
