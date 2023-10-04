@@ -67,7 +67,7 @@ stages:
   dependsOn:
   - Tests
   - Build
-  - Dev
+  - DEV
   jobs:
   - deployment:
     displayName: UAT deploy
