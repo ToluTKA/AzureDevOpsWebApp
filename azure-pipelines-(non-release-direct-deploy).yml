@@ -62,7 +62,6 @@ stages:
               azureSubscription: $(azureSubscription)
               WebAppName: 'azuredevopswebappmvc'  # Replace with your Azure App Service name
               package: $(Pipeline.Workspace)/drop/**/*.zip
-              ResourceGroupName: 'scrstckrsGrp'
               deployToSlotOrASE: true
               SlotName: 'Production'
               enableCustomDeployment: true
