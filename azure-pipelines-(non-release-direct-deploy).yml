@@ -59,9 +59,13 @@ stages:
 
           - task: AzureRmWebAppDeployment@4
             inputs:
-              azureSubscription: $(azureSubscription)
-              WebAppName: 'azuredevopswebappmvc'  # Replace with your Azure App Service name
-              package: $(Pipeline.Workspace)/drop/**/*.zip
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'ScarStack_Azure_subscription 1(d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66)'
+              appType: 'webApp'
+              WebAppName: 'azuredevopswebappmvc'
               deployToSlotOrASE: true
-              SlotName: 'Production'
-              enableCustomDeployment: true
+              ResourceGroupName: 'scrstckrsGrp'
+              SlotName: 'production'
+              packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+
