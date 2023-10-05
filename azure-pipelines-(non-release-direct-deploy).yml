@@ -66,6 +66,6 @@ stages:
               deployToSlotOrASE: true
               ResourceGroupName: 'scrstckrsGrp'
               SlotName: 'production'
-              packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+              packageForLinux: '$(Pipeline.Workspace)/drop/**/*.zip'
 
 
