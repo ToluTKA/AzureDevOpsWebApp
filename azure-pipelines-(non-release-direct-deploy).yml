@@ -20,7 +20,7 @@ stages:
       inputs:
         packageType: 'sdk'
         installationPath: $(Agent.ToolsDirectory)/dotnet
-        version: '7.0'  # Replace with the version you need
+        version: '7.x'  # Replace with the version you need
 
     - script: dotnet restore
       displayName: 'Restore'
@@ -55,7 +55,7 @@ stages:
             inputs:
               packageType: 'sdk'
               installationPath: $(Agent.ToolsDirectory)/dotnet
-              version: '7.0'  # Replace with the version you need
+              version: '7.x'  # Replace with the version you need
 
           - task: AzureRmWebAppDeployment@4
             inputs:
