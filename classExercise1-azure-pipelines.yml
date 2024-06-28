@@ -1,0 +1,47 @@
+trigger:
+  branches:
+    include:
+    - master
+variables:
+- name: solution
+  value: '**/*.sln'
+- name: buildPlatform
+  value: 'Any CPU'
+- name: buildConfiguration
+  value: 'Release'
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - task: NuGetToolInstaller@1
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: '$(solution)'
+    - task: VSBuild@1
+      inputs:
+        solution: '$(solution)'
+        msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+    - task: CopyFiles@2
+      inputs:
+        targetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'ScarStack_Azure_subscription 1 (d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66)'
+        appType: 'webApp'
+        WebAppName: 'azuredevopsmvcapp'
+        deployToSlotOrASE: true
+        ResourceGroupName: 'scrstackGrp'
+        SlotName: 'production'
+        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        enableCustomDeployment: true
+        DeploymentType: 'webDeploy'
