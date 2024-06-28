@@ -1,47 +1,85 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
 trigger:
-  branches:
-    include:
-    - master
+- master
+
+pool:
+  vmImage: windows-latest
+
 variables:
-- name: solution
-  value: '**/*.sln'
-- name: buildPlatform
-  value: 'Any CPU'
-- name: buildConfiguration
-  value: 'Release'
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
 stages:
-- stage: __default
+- stage: Tests
   jobs:
-  - job: Job
-    pool:
-      vmImage: 'windows-latest'
+  - job: 
+    displayName: Unit tests
     steps:
+    - script: echo simulate running your unit tests!
+      displayName: 'Run unit tests'
+  - job: 
+    displayName: UI tests
+    steps:
+    - script:  echo simulate running your ui tests!
+      displayName: 'Run unit tests'
+
+- stage: Build
+  dependsOn: [] # This will remove implicit dependency and run in parallel with the stage: Tests above 
+  jobs:
+  - job:
+    displayName: Build the application
+    steps:
+    - script: |
+        echo Running all builds commands...
+        echo ... commands successfully completed.
+      displayName: 'Run build scripts & tasks'
+
     - task: NuGetToolInstaller@1
+
     - task: NuGetCommand@2
       inputs:
-        restoreSolution: '$(solution)'
+       restoreSolution: '$(solution)'
+    
     - task: VSBuild@1
       inputs:
-        solution: '$(solution)'
-        msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-        platform: '$(buildPlatform)'
-        configuration: '$(buildConfiguration)'
+       solution: '$(solution)'
+       msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+       platform: '$(buildPlatform)'
+       configuration: '$(buildConfiguration)'
+
+    - task: VSTest@2
+      inputs:
+       platform: '$(buildPlatform)'
+       configuration: '$(buildConfiguration)'
+    
+    # Continue with your other build steps
+
+    # Add PublishBuildArtifacts task here
     - task: CopyFiles@2
       inputs:
-        targetFolder: '$(Build.ArtifactStagingDirectory)'
-    - task: PublishBuildArtifacts@1
+       targetFolder: '$(Build.ArtifactStagingDirectory)' 
+    
+    - task: PublishBuildArtifacts@1    
       displayName: 'Publish Artifact: drop'
       inputs:
-        PathtoPublish: '$(build.artifactstagingdirectory)'
-    - task: AzureRmWebAppDeployment@4
-      inputs:
-        ConnectionType: 'AzureRM'
-        azureSubscription: 'ScarStack_Azure_subscription 1 (d8063b4c-5a26-4bb2-a00b-b40ab0c2ba66)'
-        appType: 'webApp'
-        WebAppName: 'azuredevopsmvcapp'
-        deployToSlotOrASE: true
-        ResourceGroupName: 'scrstackGrp'
-        SlotName: 'production'
-        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-        enableCustomDeployment: true
-        DeploymentType: 'webDeploy'
+       PathtoPublish: '$(build.artifactstagingdirectory)'
+
+- stage: PROD
+  dependsOn:
+  - Tests
+  - Build
+  jobs:
+  - deployment:
+    displayName: PROD deploy
+    environment: PROD
+    strategy:
+     runOnce:
+       deploy:
+         steps:
+           - script: echo Running in the PROD environment as a deployment job
+             displayName: 'PROD based stage'
